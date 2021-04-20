@@ -1,0 +1,225 @@
+﻿body {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size:118%;
+	background:#e1f8e4;
+}
+nav {
+	height:auto;
+	background:#B7FBBF;
+    padding:20px;
+}
+nav a {
+    text-decoration:none;
+}
+nav ul li {
+	list-style: none;
+	border-bottom:black 2px solid;
+	border-right:black 2px solid;
+	text-align:center;
+	width:90%;
+	background: white;
+}
+nav ul li a:link, nav ul li a:visited {
+    color:black;
+   	text-decoration:none;
+}
+nav ul li a:hover, nav ul li a:active{
+	display:block;
+    background:#e28d8d;
+    color:black;
+}
+a:link, a:visited, a:hover,a:active{
+	color:#e28d8d;
+	text-shadow:1px 1px black;
+}
+p.tip {
+    position: relative;
+    z-index: 100;
+	padding:10px;
+}
+
+p.tip span {
+    display: none;
+}
+
+p.tip:hover span {
+    display: block;
+    position: absolute;
+    width: 300px;
+    padding: 3px;
+    border: 1px solid black;
+    background: linear-gradient(#55C763,white);
+    color: black;
+    text-align: center;
+	margin-top:1%;
+} 
+header{
+	width:100%;
+	margin-top:0%;
+	background-image: url("../media/fronds2.jpg");
+	/*background:#1e4623; option #2*/
+	padding:25px;
+}
+h1{
+	color:white;
+    text-shadow:3px 3px black;	
+    text-align:center;
+    font-size:3em;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+h2{
+	color:#357A3D;
+    text-shadow:1px 1px 1px black;	
+    text-align:center;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'PT Sans Narrow', sans-serif;	
+    font-size:2em;
+}
+h3{
+	color:#357A3D;
+    text-shadow:1px 1px gray;	
+    text-align:center;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'PT Sans Narrow', sans-serif;	
+    font-size:2em;
+}
+section, div{
+	padding:5px;
+	margin-top:0px;
+}
+#extra {
+    background: #357A3D;
+    padding: 25px;
+    box-shadow:3px 3px #555;
+	
+}
+button{
+	padding: 10px;
+	background: white;
+	color: black;
+}
+button:hover{
+	background: #357A3D;
+}
+img{
+	padding: 5px;
+	width: 50%;
+	height: auto;
+}
+footer {
+    color: black;
+    text-align: right;
+    padding: 15px;
+	width:100%;
+}
+.icon-bar{
+	width: 100%; /*Full-width*/
+	background-color: black;
+	overflow: auto; /*Overflow due to float*/
+}
+.icon-bar a{
+	float: left;/*Float links side by side*/
+	text-align: center; /*Center-align text*/
+	width: 20%; /*Equal width (5 icons with 20% width each = 100%)*/
+	padding: 5px 0px; /*Some top and bottom padding*/
+	transition: all 0.5s ease; /*Add transition for hover effects*/
+	color: #B7FBBF; /*White text color*/
+	font-size: 35px; /*Increased font size*/
+}
+.icon-bar a:hover{
+	background-color: white; /*Add a hover color*/
+}
+img{
+	width:50%;
+}
+img span{
+	width:150px;
+}
+.box{
+	text-indent:10px;
+	display:inline-grid;
+	margin-right:1%;
+	margin-left:1%;
+	margin-bottom:150px;
+	outline: 2px inset #357A3D;
+	width:25%;
+}
+.center{
+	margin-right:auto;
+	margin-left:auto;
+}
+.title{grid-area: head;}
+.menu{grid-area: nav;}
+.content{grid-area: main;}
+.extra{grid-area: aside;}
+.contact{grid-area: foot;}
+
+
+/* For mobile phones: */
+@media only screen and (max-width: 480px) {
+.grid-container{
+	display: grid;
+	grid-template-areas: 
+		'head head head'
+		'nav nav nav'
+		'main main main'
+		'aside aside aside'
+		'foot foot foot';
+	grid-gap: 0px;
+	padding: 4px;
+}
+.box{
+		margin-right:5%;
+		margin-left:5%;
+	}
+	p.tip span{
+		padding-top:2%;
+		padding-right:2%;
+	}
+	header img{
+		display:none;
+	}
+}
+/* For tablets: */
+@media only screen and (min-width:481px) {
+	.grid-container{
+		display: grid;
+		grid-template-areas: 
+			'head head head'
+			'main main main'
+			'nav nav nav'
+			'aside aside aside'
+			'foot foot foot';
+		grid-gap: 0px;
+		padding: 5px;
+	}
+	#things{
+		display:none;
+	}
+}
+
+/* For desktop: */
+@media only screen and (min-width: 769px) {
+	.grid-container{
+		display: grid;
+		grid-template-areas: 
+			'head head head head head head'
+			'main main main main nav nav'
+			'aside aside aside aside nav nav'
+			'foot foot foot foot foot foot';
+		grid-gap: 0px;
+		padding: 10px;
+	}
+	#things{
+		display:inline;
+	}
+	#extra img{
+		max-width:400px;
+	}
+	#extra{
+		font-size:1.3em;
+	}
+}
+
